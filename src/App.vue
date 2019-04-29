@@ -1,28 +1,82 @@
+<style>
+form {
+  display: flex;
+  flex-direction: column;
+}
+form span {
+  width: 80px;
+  display: inline-block;
+}
+form input,
+form select {
+  width: 240px;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #eee;
+  margin: 32px 0;
+}
+textarea {
+  width: 560px;
+  min-height: 240px;
+}
+</style>
+
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <form>
+      <label>
+        <span>Title</span>
+        <input type="text"
+               v-model="title">
+      </label>
+      <label>
+        <span>Name</span>
+        <input type="text"
+               v-model="name">
+      </label>
+      <label>
+        <span>Mobile</span>
+        <input type="text"
+               v-model="mobile">
+      </label>
+
+      <label>
+        <span>Base</span>
+        <select v-model="base">
+          <option v-for="item in ['SHANGHAI','BEIJING','CHENGDU','TAIPEI','HONGKONG','TOKOY']"
+                  :value="item"
+                  v-text="item"></option>
+        </select>
+      </label>
+
+      <label>
+        <span>Address</span>
+        <input type="text"
+               v-model="address">
+      </label>
+    </form>
+    <hr>
+    <div v-html="html"></div>
+    <hr>
+    <textarea v-text="html"></textarea>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
-  name: "app",
-  components: {
-    HelloWorld
+  data: () => ({
+    title: 'Designer',
+    name: 'Panda WANG',
+    mobile: '+86 175-2109-6154',
+    base: 'SHANGHAI',
+    address: '哈尔滨路160号老洋行1913创意园A116-119'
+  }),
+  computed: {
+    html: function () {
+      return `<div style="font-family:Verdana,sans-serif;font-size:x-small;color:#333;"><div>${this.title}&nbsp;·&nbsp;<b>${this.name}</b></div><div>Mobile&nbsp;·&nbsp;<b>${this.mobile}</b></div><div>${this.base}&nbsp;·&nbsp;${this.address}</div><div><br></div><img src="https://kanjian-static.oss-cn-hongkong.aliyuncs.com/banner/57694949d3ec4382947efce3286d75a9.png"modifysize="39%"diffpixels="4px"style="width:274px;height:74px;"><div><br></div><div>SHANGHAI·BEIJING·CHENGDU·TAIPEI·HONGKONG·TOKOY</div><div>看见音乐&nbsp;<a href="http://www.kanjian.com"><b style="color:#0000ff">KANJIAN.COM</b></a></div><div>星球发行&nbsp;<a href="http://star.kanjian.com"><b style="color:#0000ff">STAR.KANJIAN.COM</b></a></div><div>国际版&nbsp;&nbsp;&nbsp;<a href="http://en.kanjian.com"><b style="color:#0000ff">EN.KANJIAN.COM</b></a></div></div>`
+    }
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
