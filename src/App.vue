@@ -71,7 +71,7 @@ export default {
     name: 'Panda WANG',
     mobile: '+86 175-2109-6154',
     base: 'SHANGHAI',
-    address: '哈尔滨路160号老洋行1913创意园A116-119',
+    address: '哈尔滨路 160 号老洋行 1913 创意园 A116-119',
     cityList: ['SHANGHAI', 'BEIJING', 'CHENGDU', 'TAIPEI', 'HONGKONG', 'TOKYO']
   }),
   computed: {
