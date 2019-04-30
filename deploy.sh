@@ -9,10 +9,11 @@ cd dist
 # 部署到自定义域域名
 # echo 'www.example.com' > CNAME
 
+git init
 git add -A
 git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:baranwang/kanjian-signature.git master:gh-pages
+git push -f https://github.com/baranwang/kanjian-signature.git master:gh-pages
 
 cd -
