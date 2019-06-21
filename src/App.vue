@@ -76,7 +76,7 @@ export default {
   }),
   computed: {
     html: function () {
-      return `<div style="font-family:Verdana,sans-serif;font-size:x-small;color:#333;"><div>${this.title}&nbsp;·&nbsp;<b>${this.name}</b></div><div>Mobile&nbsp;·&nbsp;<b>${this.mobile}</b></div><div>${this.base}&nbsp;·&nbsp;${this.address}</div><div><br></div><img src="https://kanjian-static.oss-cn-hongkong.aliyuncs.com/banner/57694949d3ec4382947efce3286d75a9.png"modifysize="39%"diffpixels="4px"style="width:274px;height:74px;"><div><br></div><div>${this.cityList.join('·')}</div><div>看见音乐&nbsp;<a href="http://www.kanjian.com"><b style="color:#0000ff">KANJIAN.COM</b></a></div><div>星球发行&nbsp;<a href="http://star.kanjian.com"><b style="color:#0000ff">STAR.KANJIAN.COM</b></a></div><div>国际版&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://en.kanjian.com"><b style="color:#0000ff">EN.KANJIAN.COM</b></a></div></div>`
+      return `<div style="font-family:Verdana,sans-serif;font-size:x-small;color:#333;"><div>${this.title}&nbsp;·&nbsp;<b>${this.name}</b></div><div>Mobile&nbsp;·&nbsp;<b>${this.mobile}</b></div><div>${this.base}&nbsp;·&nbsp;${this.address}</div><div><br></div><img src="https://pics.kanjian.com/kanjiancom/logo_emali_signature.png""style="width:176px;height:60px;"><div><br></div><div>${this.cityList.join('·')}</div><div>看见音乐&nbsp;<a href="http://www.kanjian.com"><b style="color:#0000ff">KANJIAN.COM</b></a></div><div>星球发行&nbsp;<a href="http://star.kanjian.com"><b style="color:#0000ff">STAR.KANJIAN.COM</b></a></div><div>国际版&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://en.kanjian.com"><b style="color:#0000ff">EN.KANJIAN.COM</b></a></div></div>`
     }
   }
 };
