@@ -1,0 +1,30 @@
+name: Deploy To OSS
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Build and deploy to OSS
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Install dependencies
+        run: yarn install --production --frozen-lockfile
+
+      - name: Build project
+        run: yarn build
+
+      - name: Deploy
+        run: yarn deploy
